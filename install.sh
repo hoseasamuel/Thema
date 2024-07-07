@@ -87,7 +87,7 @@ install_theme() {
     echo "1. stellar"
     echo "2. billing"
     echo "3. enigma"
-    echo "spesial. bash <(curl -s https://pterodactyl-installer.se) manual salin instal panel"
+    echo "4. panel"
     echo "x. kembali"
     echo -e "masukan pilihan (1/2/3/x) :"
     read -r SELECT_THEME
@@ -217,9 +217,16 @@ else
   echo ""
   echo "Pilihan tidak valid. silahkan pilih 1/2/3."
 fi
+
+elif [ "$SELECT_THEME" -eq 3 ]; then
+  echo -e "                                                       "
+  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${BLUE}[+]                  INSTALLASI THEMA               [+]${NC}"
+  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "                                                                   "
+  bash <(curl -s https://pterodactyl-installer.se)
+  input 0-6 : 0
 }
-
-
 # Uninstall theme
 uninstall_theme() {
   echo -e "                                                       "
