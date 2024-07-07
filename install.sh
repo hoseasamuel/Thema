@@ -218,14 +218,7 @@ else
   echo "Pilihan tidak valid. silahkan pilih 1/2/3."
 fi
 
-elif [ "$SELECT_THEME" -eq 3 ]; then
-  echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                  INSTALLASI THEMA               [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "                                                                   "
-  bash <(curl -s https://pterodactyl-installer.se)
-  input 0-6 : 0
+
 }
 # Uninstall theme
 uninstall_theme() {
