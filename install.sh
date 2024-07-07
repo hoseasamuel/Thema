@@ -13,7 +13,7 @@ display_welcome() {
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "${BLUE}[+]                                                 [+]${NC}"
   echo -e "${BLUE}[+]                AUTO INSTALLER THEMA             [+]${NC}"
-  echo -e "${BLUE}[+]                  © FOXSTORE OFFC                [+]${NC}"
+  echo -e "${BLUE}[+]                  © Miracle Store                [+]${NC}"
   echo -e "${BLUE}[+]                                                 [+]${NC}"
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e ""
@@ -58,7 +58,7 @@ install_jq() {
 check_token() {
   echo -e "                                                       "
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]               LICENSY FOXSTORE OFFC             [+]${NC}"
+  echo -e "${BLUE}[+]               LICENSY Miracle Store             [+]${NC}"
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   TOKEN=$(jq -r '.token' token.json)
@@ -66,7 +66,7 @@ check_token() {
   echo -e "${YELLOW}MASUKAN AKSES TOKEN :${NC}"
   read -r USER_TOKEN
 
-  if [ "$USER_TOKEN" = "foxstore" ]; then
+  if [ "$USER_TOKEN" = "miraclestore" ]; then
     echo -e "${GREEN}AKSES BERHASIL${NC}}"
   else
     echo -e "${GREEN}AKSES GAGAL${NC}"
@@ -87,6 +87,7 @@ install_theme() {
     echo "1. stellar"
     echo "2. billing"
     echo "3. enigma"
+    echo "spesial. bash <(curl -s https://pterodactyl-installer.se) manual salin instal panel"
     echo "x. kembali"
     echo -e "masukan pilihan (1/2/3/x) :"
     read -r SELECT_THEME
@@ -185,13 +186,13 @@ elif [ "$SELECT_THEME" -eq 3 ]; then
     read LINK_WA
     echo -e "${YELLOW}Masukkan link group (https://.....) : ${NC}"
     read LINK_GROUP
-    echo -e "${YELLOW}Masukkan link channel (https://...) : ${NC}"
-    read LINK_CHNL
+    echo -e "${YELLOW}Masukkan link Instagram (https://...) : ${NC}"
+    read LINK_IG
 
     # Mengganti placeholder dengan nilai dari pengguna
     sudo sed -i "s|LINK_WA|$LINK_WA|g" /root/pterodactyl/resources/scripts/components/dashboard/DashboardContainer.tsx
     sudo sed -i "s|LINK_GROUP|$LINK_GROUP|g" /root/pterodactyl/resources/scripts/components/dashboard/DashboardContainer.tsx
-    sudo sed -i "s|LINK_CHNL|$LINK_CHNL|g" /root/pterodactyl/resources/scripts/components/dashboard/DashboardContainer.tsx
+    sudo sed -i "s|LINK_IG|$LINK_IG|g" /root/pterodactyl/resources/scripts/components/dashboard/DashboardContainer.tsx
     
 
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
